@@ -1,0 +1,21 @@
+:root{--bg:#07111f;--panel:#0d1b2a;--line:#26394f;--text:#f2f6fb;--muted:#9aabbe;--red:#df4d58;--blue:#3789e6;--tan:#c2a875}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#183653,#07111f 55%);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.app{max-width:1180px;margin:auto;padding:18px}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}header b{font-size:22px}header small{display:block;color:var(--muted);margin-top:3px}#roomBadge{color:var(--muted)}
+.panel{background:#0d1b2af2;border:1px solid var(--line);border-radius:18px;padding:17px;box-shadow:0 15px 50px #0005}.narrow{max-width:520px;margin:55px auto}.hidden{display:none!important}
+h1,h2,h3{margin-top:0}label{display:block;color:var(--muted);font-size:13px;margin:13px 0}input,select,button{font:inherit}input,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#071421;color:white;margin-top:6px}
+button{border:0;border-radius:10px;padding:12px 15px;background:#20364f;color:white;font-weight:800;cursor:pointer}.primary{background:#397fe4}.wide{width:100%;margin-top:10px}.actions{display:flex;gap:10px}.actions button{flex:1}.muted{color:var(--muted);font-size:13px;line-height:1.55}
+.player{padding:11px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.offline{opacity:.45}
+.layout{display:grid;grid-template-columns:1fr 290px;gap:15px}aside{display:flex;flex-direction:column;gap:12px}.board{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+.card{aspect-ratio:1.42;display:grid;place-items:center;text-align:center;border-radius:12px;background:linear-gradient(#f4ead2,#d8c49b);color:#172333;font-weight:900;font-size:clamp(12px,2vw,20px);border:1px solid #ffffff44;position:relative;user-select:none}.card.can:hover{outline:3px solid #fff5;transform:translateY(-2px)}
+.card.red{box-shadow:inset 0 0 0 5px var(--red)}.card.blue{box-shadow:inset 0 0 0 5px var(--blue)}.card.neutral{box-shadow:inset 0 0 0 5px var(--tan)}.card.death{box-shadow:inset 0 0 0 5px #000}
+.card.revealed.red{background:var(--red);color:#fff}.card.revealed.blue{background:var(--blue);color:#fff}.card.revealed.neutral{background:var(--tan);color:#fff}.card.revealed.death{background:#050505;color:#fff}
+.scores{display:grid;grid-template-columns:1fr 1fr;gap:8px}.scores div{padding:10px;border-radius:10px;text-align:center}.scores b{display:block;font-size:22px}.redbox{background:#df4d5820}.bluebox{background:#3789e620}.clue{background:#071421;padding:12px;border-radius:10px;color:var(--muted)}.clue strong{display:block;color:white;font-size:20px;margin-top:4px}
+#clueForm{margin-top:10px}#clueForm{display:grid;grid-template-columns:1fr 70px;gap:7px}#clueForm button{grid-column:1/-1}#log{max-height:180px;overflow:auto;color:#b9c7d8;font-size:12px;line-height:1.65}
+#toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%);background:#111d;padding:10px 15px;border-radius:9px;display:none}.modal{position:fixed;inset:0;background:#000b;display:grid;place-items:center;padding:20px}.modal .narrow{margin:0;width:min(480px,100%)}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.layout aside{order:-1}.board{gap:5px}.card{aspect-ratio:1.12}.app{padding:10px}.narrow{margin:30px auto}}
+
+.chooseTitle{margin-top:18px}.rolePicker{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.roleBtn{border:1px solid var(--line);background:#14263a}.roleBtn.taken{opacity:.35;cursor:not-allowed}
+.roleBtn.mine{outline:3px solid #fff7}.deathMark{position:absolute;inset:6px;border:3px solid #fff;border-radius:9px;pointer-events:none}
+.card.revealed.death{background:repeating-linear-gradient(135deg,#050505 0,#050505 12px,#2a0a0a 12px,#2a0a0a 24px);box-shadow:inset 0 0 0 5px #ff3344;color:#fff;font-size:1.08em}
+.card.death:not(.revealed){box-shadow:inset 0 0 0 7px #050505, inset 0 0 0 10px #ff3344}

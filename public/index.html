@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>双阵营猜词</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<div class="app">
+<header><div><b>🕵️ 双阵营猜词</b><small>四人实时联机</small></div><span id="roomBadge"></span></header>
+
+<section id="home" class="panel narrow">
+<h1>创建或加入房间</h1>
+<label>你的名字<input id="name" maxlength="16" placeholder="例如：小明"></label>
+<label>房间号<input id="room" inputmode="numeric" maxlength="6" placeholder="加入已有房间时填写"></label>
+<div class="actions"><button id="create" class="primary">创建房间</button><button id="join">加入房间</button></div>
+<p class="muted">创建后把 6 位房间号或当前网页链接发给另外三位玩家。</p>
+</section>
+
+<section id="lobby" class="panel narrow hidden">
+<h2>房间 <span id="lobbyRoom"></span></h2>
+<div id="playerList"></div>
+<h3 class="chooseTitle">进入房间后选择阵营与身份</h3>
+<div id="rolePicker" class="rolePicker"></div>
+<p class="muted">每个位置只能由一名玩家选择。四人全部选好后即可开始。</p>
+<button id="start" class="primary wide">开始游戏</button>
+</section>
+
+<section id="game" class="hidden">
+<div class="layout">
+<main class="panel"><div id="board" class="board"></div></main>
+<aside>
+<div class="panel">
+<div class="scores"><div class="redbox">红方剩余<b id="redLeft"></b></div><div class="bluebox">蓝方剩余<b id="blueLeft"></b></div></div>
+<h3 id="turn"></h3><div class="clue">当前提示<strong id="clue"></strong></div>
+<div id="clueForm" class="hidden"><input id="clueWord" placeholder="提示词"><input id="clueNum" type="number" min="1" max="9" value="1"><button id="sendClue" class="primary">发送提示</button></div>
+<button id="endTurn" class="wide hidden">结束本回合</button>
+</div>
+<div class="panel"><h3>玩家</h3><div id="gamePlayers"></div></div>
+<div class="panel"><h3>记录</h3><div id="log"></div></div>
+</aside></div>
+</section>
+</div>
+<div id="toast"></div>
+<div id="modal" class="modal hidden"><div class="panel narrow"><h2 id="winTitle"></h2><p id="winText"></p><button id="restart" class="primary">再来一局</button></div></div>
+<script src="/socket.io/socket.io.js"></script><script src="/game.js"></script>
+</body></html>

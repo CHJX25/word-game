@@ -1,0 +1,15 @@
+{
+  "name": "word-team-game",
+  "version": "1.1.0",
+  "private": true,
+  "description": "四人实时双阵营猜词游戏",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1",
+    "pinyin-pro": "^3.27.0"
+  }
+}
